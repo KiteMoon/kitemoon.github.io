@@ -1,0 +1,425 @@
+<!DOCTYPE html><html lang="zh_cn" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>HCIE Cloud 学习笔记 Day3 | 鸢月博客</title><meta name="keywords" content="HCIE,Cloud,云计算,学习笔记,培训笔记"><meta name="author" content="kitemoon"><meta name="copyright" content="kitemoon"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="关于网络的一些东西">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HCIE Cloud 学习笔记 Day3">
+<meta property="og:url" content="https://blog.70m.cc/blog/2022/07/cl63qsjqk000f86ycg5gjanhw/index.html">
+<meta property="og:site_name" content="鸢月博客">
+<meta property="og:description" content="关于网络的一些东西">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://api.13x.cc/random?token=Spc9Vte0HOiBWx7J2L">
+<meta property="article:published_time" content="2022-07-13T04:04:40.000Z">
+<meta property="article:modified_time" content="2022-07-27T13:05:32.111Z">
+<meta property="article:author" content="kitemoon">
+<meta property="article:tag" content="HCIE">
+<meta property="article:tag" content="Cloud">
+<meta property="article:tag" content="云计算">
+<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="培训笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://api.13x.cc/random?token=Spc9Vte0HOiBWx7J2L"><link rel="shortcut icon" href="https://pic.sikadi.top/internationBlog/2022/07/blog.png"><link rel="canonical" href="https://blog.70m.cc/blog/2022/07/cl63qsjqk000f86ycg5gjanhw/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'HCIE Cloud 学习笔记 Day3',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-07-27 21:05:32'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/rss2.xml" title="鸢月博客" type="application/rss+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://pic.sikadi.top/internationBlog/2022/06/鸢月头像.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">23</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">44</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">6</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://pan.loli.fit/"><i class="fa-fw fa fa-cloud"></i><span> 鸢月网盘</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://cpan.loli.fit/"><i class="fa-fw fa fa-cloud"></i><span> 鸢月资源</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://pic.loli.fit/"><i class="fa-fw fas fa-photo-video"></i><span> 鸢月图床</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://status.loli.fit/"><i class="fa-fw fa fa-signal"></i><span> 鸢月探针</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://sub.loli.fit/"><i class="fa-fw fa fa-paper-plane"></i><span> 订阅转化</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://u.loli.fit/"><i class="fa-fw fa fa-link"></i><span> 鸢月短链</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://blog.2cy.plus"><i class="fa-fw fas fa-link"></i><span> 中国大陆站</span></a></div><div class="menus_item"><a class="site-page" href="/link"><i class="fa-fw fa-solid fa-fan"></i><span> 友情链接</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://pic.sikadi.top/internationBlog/2022/07/blog-cover-40.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">鸢月博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://pan.loli.fit/"><i class="fa-fw fa fa-cloud"></i><span> 鸢月网盘</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://cpan.loli.fit/"><i class="fa-fw fa fa-cloud"></i><span> 鸢月资源</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://pic.loli.fit/"><i class="fa-fw fas fa-photo-video"></i><span> 鸢月图床</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://status.loli.fit/"><i class="fa-fw fa fa-signal"></i><span> 鸢月探针</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://sub.loli.fit/"><i class="fa-fw fa fa-paper-plane"></i><span> 订阅转化</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://u.loli.fit/"><i class="fa-fw fa fa-link"></i><span> 鸢月短链</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://blog.2cy.plus"><i class="fa-fw fas fa-link"></i><span> 中国大陆站</span></a></div><div class="menus_item"><a class="site-page" href="/link"><i class="fa-fw fa-solid fa-fan"></i><span> 友情链接</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">HCIE Cloud 学习笔记 Day3</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-07-13T04:04:40.000Z" title="Created 2022-07-13 12:04:40">2022-07-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-07-27T13:05:32.111Z" title="Updated 2022-07-27 21:05:32">2022-07-27</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="HCIE Cloud 学习笔记 Day3"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="HCIE-Day3"><a href="#HCIE-Day3" class="headerlink" title="HCIE Day3"></a>HCIE Day3</h1><blockquote>
+<p>前言:</p>
+<p>今天讲的主要是基础网络部分，首先讲了网络的转发规则(包括交换机的类型)然后根据这些点切入数据网络的基本模型，根据模型设计了一个网络拓扑后对齐进行分析，得出布网原则，然后讲解各类网络设备的作用，然后讲解了网络区域的类别问题，最后展示各种网络拓扑的优缺点</p>
+</blockquote>
+<h2 id="网络转发规则"><a href="#网络转发规则" class="headerlink" title="网络转发规则"></a>网络转发规则</h2><blockquote>
+<p>大部分网络大概都是这么走的</p>
+<p>用户-&gt;AP-&gt;SW-&gt;SW-&gt;SW(数据中心)-&gt;SW(异地数据中心)-&gt;SW-&gt;SW-&gt;AP-&gt;用户</p>
+</blockquote>
+<p>大多数网络分为三层</p>
+<ul>
+<li>接入</li>
+<li>汇聚</li>
+<li>和兴</li>
+</ul>
+<h3 id="接入型交换机"><a href="#接入型交换机" class="headerlink" title="接入型交换机"></a>接入型交换机</h3><p>用于直接连接终端设备</p>
+<blockquote>
+<p>就是你手机连上去第一个交换机</p>
+</blockquote>
+<h3 id="汇聚交换机"><a href="#汇聚交换机" class="headerlink" title="汇聚交换机"></a>汇聚交换机</h3><p>用于汇聚接入层交换机</p>
+<blockquote>
+<p>定义有点模糊，有的小型场所下，没有核心交换机和汇聚交换机是合一的，用于将多个交换机连接到一起</p>
+</blockquote>
+<h3 id="核心交换机"><a href="#核心交换机" class="headerlink" title="核心交换机"></a>核心交换机</h3><p>某个网络环境最终走向外部接口转发的设备</p>
+<h3 id="一个数据网络的模型"><a href="#一个数据网络的模型" class="headerlink" title="一个数据网络的模型"></a>一个数据网络的模型</h3><p>由接入层交换机接入终端，接着多个接入层交换机连接到一个汇聚交换机，多个汇聚交换机连接到核心交换机，最后走外网离开</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/07/image-20220713095543313.png" alt="image-20220713095543313"></p>
+<h3 id="布网原则"><a href="#布网原则" class="headerlink" title="布网原则"></a>布网原则</h3><blockquote>
+<p>菜狗绘图</p>
+</blockquote>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/07/%E7%BB%98%E5%9B%BE2.png" alt="绘图2"></p>
+<ul>
+<li>安全</li>
+<li>性能</li>
+<li>成本</li>
+<li>运维难度</li>
+</ul>
+<p>安全是最高原则，在安全的情况下考虑性能，然后尽可能节约成本</p>
+<h4 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h4><p>交换机和上联交换机连接的时候，要用两根线</p>
+<p>办公网络最好不要和其他网络做平层</p>
+<p>需要考虑备援问题</p>
+<h4 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h4><p>学员网络流量很大，要分离</p>
+<p>实验室同理</p>
+<p>交换机接口数量需要注意</p>
+<p>一个教室最好需要双交换机</p>
+<h4 id="成本"><a href="#成本" class="headerlink" title="成本"></a>成本</h4><p>省点钱吧</p>
+<h3 id="常见术语"><a href="#常见术语" class="headerlink" title="常见术语"></a>常见术语</h3><p>举个例子:你给你你女朋友买了个手机，快递</p>
+<table>
+<thead>
+<tr>
+<th>名词</th>
+<th>含义</th>
+<th>简易理解</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>数据载荷</td>
+<td>最终想要传递的信息</td>
+<td>手机本体</td>
+</tr>
+<tr>
+<td>报文</td>
+<td>网络中交换与传输的数据单元</td>
+<td>整个快递</td>
+</tr>
+<tr>
+<td>头部</td>
+<td>在数据载荷的前面添加的信息段(寻址信息,权限信息,解密信息)</td>
+<td>类似于快递上面那个纸</td>
+</tr>
+<tr>
+<td>尾部</td>
+<td>在数据载荷的后面添加的信息段(寻址信息,权限信息,解密信息)</td>
+<td>类似于快递上面那个纸</td>
+</tr>
+<tr>
+<td>封装</td>
+<td>对数据载荷添加头部和尾部，形成新的报文的过程</td>
+<td>给你加快递盒</td>
+</tr>
+<tr>
+<td>解封装</td>
+<td>去掉报文得到头部和尾部，获取数据载荷的过程</td>
+<td>拆掉快递盒</td>
+</tr>
+<tr>
+<td>网关</td>
+<td>提供协议转换、路由选择、数据交换等功能的网络设备(去向其他网段的门户设备)(交换机也可以配网关)</td>
+<td>中转站</td>
+</tr>
+<tr>
+<td>路由器</td>
+<td>为报文选择传递路径的网络设备</td>
+<td>目的地交换中心</td>
+</tr>
+<tr>
+<td>‘终端设备</td>
+<td>数据通信系统的端设备，作为数据的发送者火接受者</td>
+<td>你女朋友手里</td>
+</tr>
+</tbody></table>
+<h3 id="网络设备"><a href="#网络设备" class="headerlink" title="网络设备"></a>网络设备</h3><p>网络设备有很多，我们选几个来讲</p>
+<h4 id="交换机"><a href="#交换机" class="headerlink" title="交换机"></a>交换机</h4><p>距离终端最近的设备，用于终端用户接入网络，对数据帧进行交换等。</p>
+<ul>
+<li>终端设备(PC\服务器)的网络设备</li>
+<li>二层交换(同一个网段内通信，可以认为成二层)</li>
+<li>原则上只能在本网段通信(但是现在交换机都可以实现3层交换了<code>三层交换机</code>)</li>
+</ul>
+<blockquote>
+<p>这里由于没有讲协议（实际上二层三层是用协议定义的），所以我们现在定义二层就是通网段，三层就是跨网段</p>
+</blockquote>
+<p>广播：1对多</p>
+<p>单播：1对1</p>
+<h5 id="泛洪"><a href="#泛洪" class="headerlink" title="泛洪"></a>泛洪</h5><p>泛洪问题是因为广播出现回环后错误的广播导致的</p>
+<p>一般是因为一个数据包选择了错误的路径，导致无限回环（路由器发送到下一个点，下一个路由器发现需要回来，就把包发回去了，然后第一个路由器又发回去了）</p>
+<p>回环最多256次就会丢失</p>
+<h4 id="路由器"><a href="#路由器" class="headerlink" title="路由器"></a>路由器</h4><blockquote>
+<p>这个东西随着三层交换机的出现逐渐不在使用，因为他能干的，三层交换机都能干</p>
+</blockquote>
+<p>网络层设备，可以在因特网中进行数据报文转发。路由器根据所收到的报文的目的地址，选择一条合适的路径，将报文传送到下一个路由器目的地址，路径中最后的路由器负责将报文送到目标主机</p>
+<p>简单来讲:就是一个寻路的玩意，配置完毕后，能跨网段提供连通（<code>192.168.1.0</code>到<code>192.168.2.0</code>，或者<code>192.168.1.0</code>到<code>192.168.11.0</code>)</p>
+<p>作用</p>
+<ul>
+<li>实现同类型网络和异种网络之间的通信</li>
+<li>隔离广播域</li>
+<li>维护路由表</li>
+<li>路径选择、IP报文转发</li>
+<li>广域网接入、网络地址转换</li>
+<li>连接不同网段的交换机（交换机组建二层网络）</li>
+</ul>
+<h4 id="AP"><a href="#AP" class="headerlink" title="AP"></a>AP</h4><p>可以理解为发送无线信号的，AP之上就是汇聚层交换机了</p>
+<p>AP分为胖AP和瘦AP，区别如下</p>
+<ul>
+<li>胖AP<ul>
+<li>不需要无线控制器AC</li>
+<li>自带控制系统，需要手动进行配置（可以设置ARP管理等特殊功能）</li>
+<li>自己管自己</li>
+<li>适用场景<ul>
+<li>家庭环境</li>
+<li>网吧</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>瘦AP<ul>
+<li>需要无线控制器(AC)</li>
+<li>没有自带控制系统，只需要AC进行管理</li>
+<li>只负责发信号</li>
+<li>适用场景<ul>
+<li>医院</li>
+<li>大型网络</li>
+<li>复兴号列车</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>好的AP可以提供大量的接入数，也就是带机量大，但是也贵</p>
+<blockquote>
+<p>瘦AP量大有点贵</p>
+</blockquote>
+<blockquote>
+<p>案例:</p>
+<p>网吧:网吧比较小，而且接入量不大（大多数都在玩游戏）就推荐使用胖AP，成本低，也够用</p>
+<p>列车:列车车厢很多，用户通过车厢可能需要切换AP，这就需要让AP后端互联，并且覆盖范围要大，因此推荐使用瘦AP</p>
+</blockquote>
+<h4 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h4><p>网络安全设备,用于控制两个网络之间的安全通信。他通过检测、限制、更改跨越防火墙的数据流，竟可能地对外部屏蔽网络内部的信息、结构和运行状态，以此来实现对网络的安全保护</p>
+<ul>
+<li>隔离不同安全级别的网络</li>
+<li>实现不同安全级别之间的访问控制(安全策略)</li>
+<li>用户身份认证</li>
+<li>实现远程接入功能</li>
+<li>实现数据加密以及虚拟专用网业务</li>
+<li>执行网络地址转换</li>
+<li>其他安全功能</li>
+<li>监控网络</li>
+</ul>
+<blockquote>
+<p>不能防病毒，别看啦</p>
+</blockquote>
+<h3 id="补充概念"><a href="#补充概念" class="headerlink" title="补充概念"></a>补充概念</h3><h4 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h4><p>端口号可以更加快速的区分和连接服务，让IP利用率更高</p>
+<p>端口范围是:0-65535</p>
+<h2 id="网络类别"><a href="#网络类别" class="headerlink" title="网络类别"></a>网络类别</h2><p>分为:<code>局域网</code> <code>城域网</code> <code>广域网</code></p>
+<p>按照地理覆盖范围来划分，网络可以分为局域网（Local Area Network)、城域网<br>(Metropolitan Area Network)和广域网（Wide Area Network)。</p>
+<h3 id="局域网（LAN"><a href="#局域网（LAN" class="headerlink" title="局域网（LAN):"></a>局域网（LAN):</h3><ul>
+<li>在某一地理区域内由计算机、服务器以及各种网络设备组成的网络。局域网的覆盖范围一般是方圆几千米以内。</li>
+<li>典型的局域网有：一家公司的办公网络，一个网吧的网络，一个家庭网络等。</li>
+</ul>
+<h3 id="城域网（MAN"><a href="#城域网（MAN" class="headerlink" title="城域网（MAN):"></a>城域网（MAN):</h3><ul>
+<li>在一个城市范围内所建立的计算机通信网络。</li>
+<li>典型的城域网有：宽带城域网、教育城域网、市级或省级电子政务专网等。</li>
+</ul>
+<h3 id="广域网（WAN"><a href="#广域网（WAN" class="headerlink" title="广域网（WAN):"></a>广域网（WAN):</h3><ul>
+<li>通常覆盖很大的地理范围，从几十公里到几千公里。它能连接多个城市甚至国家，并能提供远距离通信，形成国际性的大型网络。</li>
+<li>典型的广域网有：Internet(因特网）。</li>
+</ul>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p>局域网连接到城域核心组合为城域网 多个城域核心向上级连接</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">这里可以看到，中小学由于设备不多，所以直接将汇聚交换机和核心交换机合并，在通过备援接线后直接接入区县教育核心</span><br><span class="line">多个区县教育核心通过广域节点连接到市教育局的广域节点，并且连接到市教育局和核心</span><br><span class="line">多个市教育核心接入省广域节点，并且连接到核心。</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://pic.sikadi.top/internationBlog/2022/07/image-20220713162035591.png" alt="image-20220713162035591"></p>
+<h2 id="网络拓扑"><a href="#网络拓扑" class="headerlink" title="网络拓扑"></a>网络拓扑</h2><p>网络拓扑是指用传输介质(双绞线、光纤)互连各种设备（例如计算机终端、路由器、交换机等）所呈现的结构化布局</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/07/image-20220713162241089.png" alt="image-20220713162241089"></p>
+<h3 id="拓扑形态"><a href="#拓扑形态" class="headerlink" title="拓扑形态"></a>拓扑形态</h3><p>主要包含</p>
+<ul>
+<li><code>星型</code>：简单便宜</li>
+<li><code>总线型</code>:简单过时便宜</li>
+<li><code>环形网络</code>:相对前两个安全，便宜</li>
+<li><code>树状型</code>:结构明了，贵</li>
+<li><code>全网状型 </code>:安全性高 ，贵</li>
+<li><code>部分网状网络</code> 灵活 略贵</li>
+<li><code>组合型网络拓扑</code>:因人而异</li>
+</ul>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/07/image-20220713162442969.png" alt="image-20220713162442969"></p>
+<p>任何布网方案都是没有问题的，只有合适与不合适，安全，成本等各方面共同决定才能选出一个较好的布网方案，多种网络组合不失为一个好的解决方案</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="https://blog.70m.cc">kitemoon</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://blog.70m.cc/blog/2022/07/cl63qsjqk000f86ycg5gjanhw/">https://blog.70m.cc/blog/2022/07/cl63qsjqk000f86ycg5gjanhw/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/HCIE/">HCIE</a><a class="post-meta__tags" href="/tags/Cloud/">Cloud</a><a class="post-meta__tags" href="/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/">云计算</a><a class="post-meta__tags" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><a class="post-meta__tags" href="/tags/%E5%9F%B9%E8%AE%AD%E7%AC%94%E8%AE%B0/">培训笔记</a></div><div class="post_share"><div class="social-share" data-image="https://api.13x.cc/random?token=Spc9Vte0HOiBWx7J2L" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/blog/2022/07/cl63qsjql000g86yccrw8e53c/"><img class="prev-cover" src="https://api.13x.cc/random?token=Spc9Vte0HOiBWx7J2L" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">HCIE Cloud 学习笔记 Day4</div></div></a></div><div class="next-post pull-right"><a href="/blog/2022/07/cl63qsjqh000a86yccicg7gwp/"><img class="next-cover" src="https://txcdn.2cy.plus/2022/07/13/62ce1d1291697/blog-cover-39.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">HCIE Cloud 学习笔记 Day2</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/blog/2022/07/cl63qsjqh000a86yccicg7gwp/" title="HCIE Cloud 学习笔记 Day2"><img class="cover" src="https://txcdn.2cy.plus/2022/07/13/62ce1d1291697/blog-cover-39.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-12</div><div class="title">HCIE Cloud 学习笔记 Day2</div></div></a></div><div><a href="/blog/2022/07/cl63qsjqi000b86yc7jy22kc4/" title="HCIE Cloud 学习笔记 Day1"><img class="cover" src="https://pic.sikadi.top/internationBlog/2022/07/blog-cover-37.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-11</div><div class="title">HCIE Cloud 学习笔记 Day1</div></div></a></div><div><a href="/blog/2022/07/cl63qsjql000g86yccrw8e53c/" title="HCIE Cloud 学习笔记 Day4"><img class="cover" src="https://api.13x.cc/random?token=Spc9Vte0HOiBWx7J2L" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-14</div><div class="title">HCIE Cloud 学习笔记 Day4</div></div></a></div><div><a href="/blog/2022/06/cl63qsjqw001b86yc8hlo1m16/" title="华为数通学习记录——Part1"><img class="cover" src="https://pic.sikadi.top/internationBlog/2022/06/17b09401c4bc1.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-24</div><div class="title">华为数通学习记录——Part1</div></div></a></div><div><a href="/blog/2022/06/cl63qsjqx001e86ycaabfhtbv/" title="华为数通学习记录——Part2"><img class="cover" src="https://pic.sikadi.top/internationBlog/2022/06ying-yi-72px.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-25</div><div class="title">华为数通学习记录——Part2</div></div></a></div><div><a href="/blog/2022/07/cl63qsjqy001h86ycdqvlcq4t/" title="华为数通学习记录——Part3"><img class="cover" src="https://pic.sikadi.top/internationBlog/2022/07/blog-cover-34.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-05</div><div class="title">华为数通学习记录——Part3</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://pic.sikadi.top/internationBlog/2022/06/鸢月头像.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">kitemoon</div><div class="author-info__description">鸢月博客国际站，与主站每天同步一次，使用国际CDN进行加速</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">23</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">44</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/KiteMoon"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/KiteMoon" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xie@loli.fit" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">这里是鸢月博客国际站，采用全静态设计，使用CloudFlare加速，适合国际用户，如果需要回到CN站 <a target="view_window" href=https://blog.2cy.plus>请点我</a><br/>站点同步中，请稍后</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HCIE-Day3"><span class="toc-number">1.</span> <span class="toc-text">HCIE Day3</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E8%BD%AC%E5%8F%91%E8%A7%84%E5%88%99"><span class="toc-number">1.1.</span> <span class="toc-text">网络转发规则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%85%A5%E5%9E%8B%E4%BA%A4%E6%8D%A2%E6%9C%BA"><span class="toc-number">1.1.1.</span> <span class="toc-text">接入型交换机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%87%E8%81%9A%E4%BA%A4%E6%8D%A2%E6%9C%BA"><span class="toc-number">1.1.2.</span> <span class="toc-text">汇聚交换机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E4%BA%A4%E6%8D%A2%E6%9C%BA"><span class="toc-number">1.1.3.</span> <span class="toc-text">核心交换机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E7%BD%91%E7%BB%9C%E7%9A%84%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.1.4.</span> <span class="toc-text">一个数据网络的模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%83%E7%BD%91%E5%8E%9F%E5%88%99"><span class="toc-number">1.1.5.</span> <span class="toc-text">布网原则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E5%85%A8"><span class="toc-number">1.1.5.1.</span> <span class="toc-text">安全</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%A7%E8%83%BD"><span class="toc-number">1.1.5.2.</span> <span class="toc-text">性能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%90%E6%9C%AC"><span class="toc-number">1.1.5.3.</span> <span class="toc-text">成本</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E6%9C%AF%E8%AF%AD"><span class="toc-number">1.1.6.</span> <span class="toc-text">常见术语</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87"><span class="toc-number">1.1.7.</span> <span class="toc-text">网络设备</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%A4%E6%8D%A2%E6%9C%BA"><span class="toc-number">1.1.7.1.</span> <span class="toc-text">交换机</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B3%9B%E6%B4%AA"><span class="toc-number">1.1.7.1.1.</span> <span class="toc-text">泛洪</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E5%99%A8"><span class="toc-number">1.1.7.2.</span> <span class="toc-text">路由器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#AP"><span class="toc-number">1.1.7.3.</span> <span class="toc-text">AP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%98%B2%E7%81%AB%E5%A2%99"><span class="toc-number">1.1.7.4.</span> <span class="toc-text">防火墙</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.8.</span> <span class="toc-text">补充概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AB%AF%E5%8F%A3"><span class="toc-number">1.1.8.1.</span> <span class="toc-text">端口</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E7%B1%BB%E5%88%AB"><span class="toc-number">1.2.</span> <span class="toc-text">网络类别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%80%E5%9F%9F%E7%BD%91%EF%BC%88LAN"><span class="toc-number">1.2.1.</span> <span class="toc-text">局域网（LAN):</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%8E%E5%9F%9F%E7%BD%91%EF%BC%88MAN"><span class="toc-number">1.2.2.</span> <span class="toc-text">城域网（MAN):</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%BF%E5%9F%9F%E7%BD%91%EF%BC%88WAN"><span class="toc-number">1.2.3.</span> <span class="toc-text">广域网（WAN):</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">示例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91"><span class="toc-number">1.3.</span> <span class="toc-text">网络拓扑</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%93%E6%89%91%E5%BD%A2%E6%80%81"><span class="toc-number">1.3.1.</span> <span class="toc-text">拓扑形态</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/blog/2022/07/cl63qsjql000g86yccrw8e53c/" title="HCIE Cloud 学习笔记 Day4"><img src="https://api.13x.cc/random?token=Spc9Vte0HOiBWx7J2L" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HCIE Cloud 学习笔记 Day4"/></a><div class="content"><a class="title" href="/blog/2022/07/cl63qsjql000g86yccrw8e53c/" title="HCIE Cloud 学习笔记 Day4">HCIE Cloud 学习笔记 Day4</a><time datetime="2022-07-14T12:04:40.000Z" title="Created 2022-07-14 20:04:40">2022-07-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2022/07/cl63qsjqk000f86ycg5gjanhw/" title="HCIE Cloud 学习笔记 Day3"><img src="https://api.13x.cc/random?token=Spc9Vte0HOiBWx7J2L" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HCIE Cloud 学习笔记 Day3"/></a><div class="content"><a class="title" href="/blog/2022/07/cl63qsjqk000f86ycg5gjanhw/" title="HCIE Cloud 学习笔记 Day3">HCIE Cloud 学习笔记 Day3</a><time datetime="2022-07-13T04:04:40.000Z" title="Created 2022-07-13 12:04:40">2022-07-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2022/07/cl63qsjqh000a86yccicg7gwp/" title="HCIE Cloud 学习笔记 Day2"><img src="https://txcdn.2cy.plus/2022/07/13/62ce1d1291697/blog-cover-39.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HCIE Cloud 学习笔记 Day2"/></a><div class="content"><a class="title" href="/blog/2022/07/cl63qsjqh000a86yccicg7gwp/" title="HCIE Cloud 学习笔记 Day2">HCIE Cloud 学习笔记 Day2</a><time datetime="2022-07-12T04:04:40.000Z" title="Created 2022-07-12 12:04:40">2022-07-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2022/07/cl63qsjqi000b86yc7jy22kc4/" title="HCIE Cloud 学习笔记 Day1"><img src="https://pic.sikadi.top/internationBlog/2022/07/blog-cover-37.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HCIE Cloud 学习笔记 Day1"/></a><div class="content"><a class="title" href="/blog/2022/07/cl63qsjqi000b86yc7jy22kc4/" title="HCIE Cloud 学习笔记 Day1">HCIE Cloud 学习笔记 Day1</a><time datetime="2022-07-11T14:04:40.000Z" title="Created 2022-07-11 22:04:40">2022-07-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2022/07/cl63qsjqg000786ycdjcr9cnh/" title="GIN框架学习记录1——初始化第一个后端"><img src="https://pic.sikadi.top/internationBlog/2022/07/blog-cove-36r.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="GIN框架学习记录1——初始化第一个后端"/></a><div class="content"><a class="title" href="/blog/2022/07/cl63qsjqg000786ycdjcr9cnh/" title="GIN框架学习记录1——初始化第一个后端">GIN框架学习记录1——初始化第一个后端</a><time datetime="2022-07-07T14:04:40.000Z" title="Created 2022-07-07 22:04:40">2022-07-07</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By kitemoon</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'https://blog.70m.cc/blog/2022/07/cl63qsjqk000f86ycg5gjanhw/'
+    this.page.identifier = '/blog/2022/07/cl63qsjqk000f86ycg5gjanhw/'
+    this.page.title = 'HCIE Cloud 学习笔记 Day3'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://kitemoon-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+
+  document.getElementById('darkmode').addEventListener('click', () => {
+    setTimeout(() => window.disqusReset(), 200)
+  })
+}
+
+if ('Disqus' === 'Disqus' || !false) {
+  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html><html lang="zh_cn" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>HCIE Cloud 学习笔记 Day2 | 鸢月博客</title><meta name="keywords" content="HCIE,Cloud,云计算,学习笔记,培训笔记"><meta name="author" content="kitemoon"><meta name="copyright" content="kitemoon"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="关于数据中心的一些东西">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HCIE Cloud 学习笔记 Day2">
+<meta property="og:url" content="https://blog.70m.cc/blog/2022/07/cl63qsjqh000a86yccicg7gwp/index.html">
+<meta property="og:site_name" content="鸢月博客">
+<meta property="og:description" content="关于数据中心的一些东西">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://txcdn.2cy.plus/2022/07/13/62ce1d1291697/blog-cover-39.png">
+<meta property="article:published_time" content="2022-07-12T04:04:40.000Z">
+<meta property="article:modified_time" content="2022-07-27T13:05:32.108Z">
+<meta property="article:author" content="kitemoon">
+<meta property="article:tag" content="HCIE">
+<meta property="article:tag" content="Cloud">
+<meta property="article:tag" content="云计算">
+<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="培训笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://txcdn.2cy.plus/2022/07/13/62ce1d1291697/blog-cover-39.png"><link rel="shortcut icon" href="https://pic.sikadi.top/internationBlog/2022/07/blog.png"><link rel="canonical" href="https://blog.70m.cc/blog/2022/07/cl63qsjqh000a86yccicg7gwp/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'HCIE Cloud 学习笔记 Day2',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-07-27 21:05:32'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/rss2.xml" title="鸢月博客" type="application/rss+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://pic.sikadi.top/internationBlog/2022/06/鸢月头像.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">23</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">44</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">6</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://pan.loli.fit/"><i class="fa-fw fa fa-cloud"></i><span> 鸢月网盘</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://cpan.loli.fit/"><i class="fa-fw fa fa-cloud"></i><span> 鸢月资源</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://pic.loli.fit/"><i class="fa-fw fas fa-photo-video"></i><span> 鸢月图床</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://status.loli.fit/"><i class="fa-fw fa fa-signal"></i><span> 鸢月探针</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://sub.loli.fit/"><i class="fa-fw fa fa-paper-plane"></i><span> 订阅转化</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://u.loli.fit/"><i class="fa-fw fa fa-link"></i><span> 鸢月短链</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://blog.2cy.plus"><i class="fa-fw fas fa-link"></i><span> 中国大陆站</span></a></div><div class="menus_item"><a class="site-page" href="/link"><i class="fa-fw fa-solid fa-fan"></i><span> 友情链接</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://txcdn.2cy.plus/2022/07/13/62ce1d1291697/blog-cover-39.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">鸢月博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://pan.loli.fit/"><i class="fa-fw fa fa-cloud"></i><span> 鸢月网盘</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://cpan.loli.fit/"><i class="fa-fw fa fa-cloud"></i><span> 鸢月资源</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://pic.loli.fit/"><i class="fa-fw fas fa-photo-video"></i><span> 鸢月图床</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://status.loli.fit/"><i class="fa-fw fa fa-signal"></i><span> 鸢月探针</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://sub.loli.fit/"><i class="fa-fw fa fa-paper-plane"></i><span> 订阅转化</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://u.loli.fit/"><i class="fa-fw fa fa-link"></i><span> 鸢月短链</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://blog.2cy.plus"><i class="fa-fw fas fa-link"></i><span> 中国大陆站</span></a></div><div class="menus_item"><a class="site-page" href="/link"><i class="fa-fw fa-solid fa-fan"></i><span> 友情链接</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">HCIE Cloud 学习笔记 Day2</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-07-12T04:04:40.000Z" title="Created 2022-07-12 12:04:40">2022-07-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-07-27T13:05:32.108Z" title="Updated 2022-07-27 21:05:32">2022-07-27</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="HCIE Cloud 学习笔记 Day2"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="HCIE-Day-2"><a href="#HCIE-Day-2" class="headerlink" title="HCIE Day 2"></a>HCIE Day 2</h1><h2 id="数据中心"><a href="#数据中心" class="headerlink" title="数据中心"></a>数据中心</h2><p>什么数据中心:(这个定义非常笼统，我们一般认为成)</p>
+<p>数据中心一般包含以下内容</p>
+<ul>
+<li>计算<ul>
+<li>服务器</li>
+<li>简单处理:服务器承载操作系统-&gt;操作系统承载APP-&gt;APP提供业务(server)</li>
+</ul>
+</li>
+<li>存储<ul>
+<li>存储设置</li>
+</ul>
+</li>
+<li>网络<ul>
+<li>交换机</li>
+<li>路由器</li>
+<li>防火墙</li>
+<li>防毒墙</li>
+<li>台式感知</li>
+</ul>
+</li>
+</ul>
+<h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><p>操作系统可以理解为是APP到硬件之间的中间件</p>
+<p>APP在请求硬件资源的时候，就需要一种方式来，这个方式就是操作系统(OS)</p>
+<p>比如我保存并发送一封邮件，需要调用计算资源和储存资源，这些资源就需要操作系统来帮我们调用</p>
+<blockquote>
+<p>注意:可以没有操作系统，直接开发一个软件，自带翻译器，就可以直接调用资源（比如小的游戏机）</p>
+</blockquote>
+<blockquote>
+<p>如果说一个操作系统的版本号小于一个编程语言(一个win10 19版本的 有个20年的编程软件），那么就需要安装一些插件来支持这个系统（也就是各种的库）</p>
+</blockquote>
+<h3 id="主流的操作系统"><a href="#主流的操作系统" class="headerlink" title="主流的操作系统"></a>主流的操作系统</h3><p>主流的操作系统一般是:<code>win</code> <code>linux</code></p>
+<p>其中<code>server</code>一般是指的服务器版本</p>
+<h3 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h3><p>主流的架构一般是:<code>ARM</code> <code>X86</code></p>
+<p>我们一般说的<code>x86_64</code>是指的<code>X86</code>系统架构 <code>64位</code>内存位数</p>
+<p><code>ARM</code>是精简指令集</p>
+<p><code>X86</code>是复杂指令集</p>
+<h4 id="指令集"><a href="#指令集" class="headerlink" title="指令集"></a>指令集</h4><p>指令集一般分为两种<code>精简指令集</code> <code>复杂指令集</code></p>
+<p>先准备个吃饭的例子</p>
+<p>我们吃饭是这些步骤:<code>拿筷子</code> <code>夹菜</code> <code>放嘴里</code> <code>咀嚼</code> <code>吞下</code></p>
+<h5 id="精简指令集"><a href="#精简指令集" class="headerlink" title="精简指令集"></a>精简指令集</h5><p>他会把所有的步骤分为各种小步骤</p>
+<p>比如步骤1:<code>拿筷子</code> 步骤2<code>夹菜</code> 步骤3<code>放嘴里</code> 步骤4<code>咀嚼</code> 步骤5<code>吞下</code></p>
+<p>然后把步骤拿出来串起来，变成12345</p>
+<p>优点:每次有任务出现，可以把步骤复用，比如我吃完饭要喝汤，其中<code>放嘴里</code>和<code>吞下</code>步骤给重新拿出来用，这样就节约了资源，同时由于分步骤的原因，对单个核心的性能要求就较低一些,同时<strong>可以减少代码的开发量</strong></p>
+<p>缺点:吃核心数，需要多核心协同工作</p>
+<blockquote>
+<p>可以简单理解为:精简指令集核心多，效率才高。</p>
+<p>例子:吃馒头，要吃10个，吃馒头这个步骤本身算力效率低，我们就可以来10个核心，然后分配到10个核心吃馒头，肯定要更快。（反正都是在一个同步时间就完成任务，我一个核心5GHZ，在一个同步时间内也只能吃一个馒头，要10个核心才行。但是我10个核心一个0.5GHZ，十个核心一起来吃，一个同步时间也完成了</p>
+</blockquote>
+<h5 id="复杂指令集"><a href="#复杂指令集" class="headerlink" title="复杂指令集"></a>复杂指令集</h5><p>他会把所有步骤组合为一起，不分步骤，直接编译为一个整体</p>
+<p>一气呵成</p>
+<p>步骤被确定后就锁死，在不同的工作模式下就需要重新编程（只能推掉，不能复用）</p>
+<p>优点:在运行一次性不复用的任务时，效率非常高，不吃核心数</p>
+<p>缺点：每次有任务出现，底层都需要重新编译个新的操作&#x2F;<strong>增加代码的开发量</strong></p>
+<blockquote>
+<p>目前主要问题是芯片性能到瓶颈了，单个核心主频上不去，多个核心复用又不适合复杂指令集，因此比较尴尬 </p>
+</blockquote>
+<h2 id="软件架构"><a href="#软件架构" class="headerlink" title="软件架构"></a>软件架构</h2><h3 id="C-x2F-S"><a href="#C-x2F-S" class="headerlink" title="C&#x2F;S"></a>C&#x2F;S</h3><p>客户端&lt;–&gt;服务端</p>
+<p>例子:微信，王者荣耀</p>
+<h3 id="B-x2F-S"><a href="#B-x2F-S" class="headerlink" title="B&#x2F;S"></a>B&#x2F;S</h3><p>网页端&lt;–&gt;服务端</p>
+<p>例子:4399小游戏 还有你看的这篇博客</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="https://blog.70m.cc">kitemoon</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://blog.70m.cc/blog/2022/07/cl63qsjqh000a86yccicg7gwp/">https://blog.70m.cc/blog/2022/07/cl63qsjqh000a86yccicg7gwp/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/HCIE/">HCIE</a><a class="post-meta__tags" href="/tags/Cloud/">Cloud</a><a class="post-meta__tags" href="/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/">云计算</a><a class="post-meta__tags" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><a class="post-meta__tags" href="/tags/%E5%9F%B9%E8%AE%AD%E7%AC%94%E8%AE%B0/">培训笔记</a></div><div class="post_share"><div class="social-share" data-image="https://txcdn.2cy.plus/2022/07/13/62ce1d1291697/blog-cover-39.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/blog/2022/07/cl63qsjqk000f86ycg5gjanhw/"><img class="prev-cover" src="https://api.13x.cc/random?token=Spc9Vte0HOiBWx7J2L" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">HCIE Cloud 学习笔记 Day3</div></div></a></div><div class="next-post pull-right"><a href="/blog/2022/07/cl63qsjqi000b86yc7jy22kc4/"><img class="next-cover" src="https://pic.sikadi.top/internationBlog/2022/07/blog-cover-37.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">HCIE Cloud 学习笔记 Day1</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/blog/2022/07/cl63qsjqi000b86yc7jy22kc4/" title="HCIE Cloud 学习笔记 Day1"><img class="cover" src="https://pic.sikadi.top/internationBlog/2022/07/blog-cover-37.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-11</div><div class="title">HCIE Cloud 学习笔记 Day1</div></div></a></div><div><a href="/blog/2022/07/cl63qsjqk000f86ycg5gjanhw/" title="HCIE Cloud 学习笔记 Day3"><img class="cover" src="https://api.13x.cc/random?token=Spc9Vte0HOiBWx7J2L" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-13</div><div class="title">HCIE Cloud 学习笔记 Day3</div></div></a></div><div><a href="/blog/2022/07/cl63qsjql000g86yccrw8e53c/" title="HCIE Cloud 学习笔记 Day4"><img class="cover" src="https://api.13x.cc/random?token=Spc9Vte0HOiBWx7J2L" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-14</div><div class="title">HCIE Cloud 学习笔记 Day4</div></div></a></div><div><a href="/blog/2022/06/cl63qsjqw001b86yc8hlo1m16/" title="华为数通学习记录——Part1"><img class="cover" src="https://pic.sikadi.top/internationBlog/2022/06/17b09401c4bc1.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-24</div><div class="title">华为数通学习记录——Part1</div></div></a></div><div><a href="/blog/2022/06/cl63qsjqx001e86ycaabfhtbv/" title="华为数通学习记录——Part2"><img class="cover" src="https://pic.sikadi.top/internationBlog/2022/06ying-yi-72px.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-25</div><div class="title">华为数通学习记录——Part2</div></div></a></div><div><a href="/blog/2022/07/cl63qsjqy001h86ycdqvlcq4t/" title="华为数通学习记录——Part3"><img class="cover" src="https://pic.sikadi.top/internationBlog/2022/07/blog-cover-34.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-05</div><div class="title">华为数通学习记录——Part3</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://pic.sikadi.top/internationBlog/2022/06/鸢月头像.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">kitemoon</div><div class="author-info__description">鸢月博客国际站，与主站每天同步一次，使用国际CDN进行加速</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">23</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">44</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/KiteMoon"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/KiteMoon" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xie@loli.fit" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">这里是鸢月博客国际站，采用全静态设计，使用CloudFlare加速，适合国际用户，如果需要回到CN站 <a target="view_window" href=https://blog.2cy.plus>请点我</a><br/>站点同步中，请稍后</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HCIE-Day-2"><span class="toc-number">1.</span> <span class="toc-text">HCIE Day 2</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E4%B8%AD%E5%BF%83"><span class="toc-number">1.1.</span> <span class="toc-text">数据中心</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.2.</span> <span class="toc-text">操作系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E6%B5%81%E7%9A%84%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.2.1.</span> <span class="toc-text">主流的操作系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%B6%E6%9E%84"><span class="toc-number">1.2.2.</span> <span class="toc-text">架构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E9%9B%86"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">指令集</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B2%BE%E7%AE%80%E6%8C%87%E4%BB%A4%E9%9B%86"><span class="toc-number">1.2.2.1.1.</span> <span class="toc-text">精简指令集</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%8D%E6%9D%82%E6%8C%87%E4%BB%A4%E9%9B%86"><span class="toc-number">1.2.2.1.2.</span> <span class="toc-text">复杂指令集</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84"><span class="toc-number">1.3.</span> <span class="toc-text">软件架构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#C-x2F-S"><span class="toc-number">1.3.1.</span> <span class="toc-text">C&#x2F;S</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B-x2F-S"><span class="toc-number">1.3.2.</span> <span class="toc-text">B&#x2F;S</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/blog/2022/07/cl63qsjql000g86yccrw8e53c/" title="HCIE Cloud 学习笔记 Day4"><img src="https://api.13x.cc/random?token=Spc9Vte0HOiBWx7J2L" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HCIE Cloud 学习笔记 Day4"/></a><div class="content"><a class="title" href="/blog/2022/07/cl63qsjql000g86yccrw8e53c/" title="HCIE Cloud 学习笔记 Day4">HCIE Cloud 学习笔记 Day4</a><time datetime="2022-07-14T12:04:40.000Z" title="Created 2022-07-14 20:04:40">2022-07-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2022/07/cl63qsjqk000f86ycg5gjanhw/" title="HCIE Cloud 学习笔记 Day3"><img src="https://api.13x.cc/random?token=Spc9Vte0HOiBWx7J2L" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HCIE Cloud 学习笔记 Day3"/></a><div class="content"><a class="title" href="/blog/2022/07/cl63qsjqk000f86ycg5gjanhw/" title="HCIE Cloud 学习笔记 Day3">HCIE Cloud 学习笔记 Day3</a><time datetime="2022-07-13T04:04:40.000Z" title="Created 2022-07-13 12:04:40">2022-07-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2022/07/cl63qsjqh000a86yccicg7gwp/" title="HCIE Cloud 学习笔记 Day2"><img src="https://txcdn.2cy.plus/2022/07/13/62ce1d1291697/blog-cover-39.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HCIE Cloud 学习笔记 Day2"/></a><div class="content"><a class="title" href="/blog/2022/07/cl63qsjqh000a86yccicg7gwp/" title="HCIE Cloud 学习笔记 Day2">HCIE Cloud 学习笔记 Day2</a><time datetime="2022-07-12T04:04:40.000Z" title="Created 2022-07-12 12:04:40">2022-07-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2022/07/cl63qsjqi000b86yc7jy22kc4/" title="HCIE Cloud 学习笔记 Day1"><img src="https://pic.sikadi.top/internationBlog/2022/07/blog-cover-37.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HCIE Cloud 学习笔记 Day1"/></a><div class="content"><a class="title" href="/blog/2022/07/cl63qsjqi000b86yc7jy22kc4/" title="HCIE Cloud 学习笔记 Day1">HCIE Cloud 学习笔记 Day1</a><time datetime="2022-07-11T14:04:40.000Z" title="Created 2022-07-11 22:04:40">2022-07-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2022/07/cl63qsjqg000786ycdjcr9cnh/" title="GIN框架学习记录1——初始化第一个后端"><img src="https://pic.sikadi.top/internationBlog/2022/07/blog-cove-36r.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="GIN框架学习记录1——初始化第一个后端"/></a><div class="content"><a class="title" href="/blog/2022/07/cl63qsjqg000786ycdjcr9cnh/" title="GIN框架学习记录1——初始化第一个后端">GIN框架学习记录1——初始化第一个后端</a><time datetime="2022-07-07T14:04:40.000Z" title="Created 2022-07-07 22:04:40">2022-07-07</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By kitemoon</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'https://blog.70m.cc/blog/2022/07/cl63qsjqh000a86yccicg7gwp/'
+    this.page.identifier = '/blog/2022/07/cl63qsjqh000a86yccicg7gwp/'
+    this.page.title = 'HCIE Cloud 学习笔记 Day2'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://kitemoon-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+
+  document.getElementById('darkmode').addEventListener('click', () => {
+    setTimeout(() => window.disqusReset(), 200)
+  })
+}
+
+if ('Disqus' === 'Disqus' || !false) {
+  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

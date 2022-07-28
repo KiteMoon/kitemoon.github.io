@@ -1,0 +1,333 @@
+<!DOCTYPE html><html lang="zh_cn" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>B2+cloudflace+Picgo实现图床 | 鸢月博客</title><meta name="keywords" content="白嫖,图床,B2,CloudFlare"><meta name="author" content="kitemoon"><meta name="copyright" content="kitemoon"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="使用B2+CloudFlare+PicGO实现图床">
+<meta property="og:type" content="article">
+<meta property="og:title" content="B2+cloudflace+Picgo实现图床">
+<meta property="og:url" content="https://blog.70m.cc/blog/2022/06/cl63qsjq9000186ycgaaw61yz/index.html">
+<meta property="og:site_name" content="鸢月博客">
+<meta property="og:description" content="使用B2+CloudFlare+PicGO实现图床">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://txcdn.2cy.plus/2022/07/01/62befc9bc8008/blog-cover-32.png">
+<meta property="article:published_time" content="2022-06-28T05:47:40.000Z">
+<meta property="article:modified_time" content="2022-07-27T13:05:32.083Z">
+<meta property="article:author" content="kitemoon">
+<meta property="article:tag" content="白嫖">
+<meta property="article:tag" content="图床">
+<meta property="article:tag" content="B2">
+<meta property="article:tag" content="CloudFlare">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://txcdn.2cy.plus/2022/07/01/62befc9bc8008/blog-cover-32.png"><link rel="shortcut icon" href="https://pic.sikadi.top/internationBlog/2022/07/blog.png"><link rel="canonical" href="https://blog.70m.cc/blog/2022/06/cl63qsjq9000186ycgaaw61yz/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'B2+cloudflace+Picgo实现图床',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-07-27 21:05:32'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/rss2.xml" title="鸢月博客" type="application/rss+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://pic.sikadi.top/internationBlog/2022/06/鸢月头像.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">23</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">44</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">6</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://pan.loli.fit/"><i class="fa-fw fa fa-cloud"></i><span> 鸢月网盘</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://cpan.loli.fit/"><i class="fa-fw fa fa-cloud"></i><span> 鸢月资源</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://pic.loli.fit/"><i class="fa-fw fas fa-photo-video"></i><span> 鸢月图床</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://status.loli.fit/"><i class="fa-fw fa fa-signal"></i><span> 鸢月探针</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://sub.loli.fit/"><i class="fa-fw fa fa-paper-plane"></i><span> 订阅转化</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://u.loli.fit/"><i class="fa-fw fa fa-link"></i><span> 鸢月短链</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://blog.2cy.plus"><i class="fa-fw fas fa-link"></i><span> 中国大陆站</span></a></div><div class="menus_item"><a class="site-page" href="/link"><i class="fa-fw fa-solid fa-fan"></i><span> 友情链接</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://txcdn.2cy.plus/2022/07/01/62befc9bc8008/blog-cover-32.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">鸢月博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://pan.loli.fit/"><i class="fa-fw fa fa-cloud"></i><span> 鸢月网盘</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://cpan.loli.fit/"><i class="fa-fw fa fa-cloud"></i><span> 鸢月资源</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://pic.loli.fit/"><i class="fa-fw fas fa-photo-video"></i><span> 鸢月图床</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://status.loli.fit/"><i class="fa-fw fa fa-signal"></i><span> 鸢月探针</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://sub.loli.fit/"><i class="fa-fw fa fa-paper-plane"></i><span> 订阅转化</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://u.loli.fit/"><i class="fa-fw fa fa-link"></i><span> 鸢月短链</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://blog.2cy.plus"><i class="fa-fw fas fa-link"></i><span> 中国大陆站</span></a></div><div class="menus_item"><a class="site-page" href="/link"><i class="fa-fw fa-solid fa-fan"></i><span> 友情链接</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">B2+cloudflace+Picgo实现图床</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-06-28T05:47:40.000Z" title="Created 2022-06-28 13:47:40">2022-06-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-07-27T13:05:32.083Z" title="Updated 2022-07-27 21:05:32">2022-07-27</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%BB%8F%E9%AA%8C/">经验</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="B2+cloudflace+Picgo实现图床"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="B2-cloudflace-Picgo实现图床"><a href="#B2-cloudflace-Picgo实现图床" class="headerlink" title="B2+cloudflace+Picgo实现图床"></a>B2+cloudflace+Picgo实现图床</h1><h2 id="前排提醒"><a href="#前排提醒" class="headerlink" title="前排提醒"></a>前排提醒</h2><p>任何非付费得到计划都有风险，个人建议从两方面入手，别绑卡，别给真实信息，这样跑炸了也不会经济损失</p>
+<p>同时请注意，务必注意，CF对国内加速效果很差劲，所以推荐国际网站使用。</p>
+<p>文中所有信息都需要结合实际情况进行填写，切勿随意乱填</p>
+<p>小本本非常重要，请务必按照实际情况记录。</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>一个域名：需要NS解析到<code>cloudflace</code></p>
+<p>一个B2账号：需要能开桶</p>
+<p>一个cloudflace：Free版本才行</p>
+<h2 id="正篇"><a href="#正篇" class="headerlink" title="正篇"></a>正篇</h2><h3 id="B2设置"><a href="#B2设置" class="headerlink" title="B2设置"></a>B2设置</h3><h4 id="创建B2桶"><a href="#创建B2桶" class="headerlink" title="创建B2桶"></a>创建B2桶</h4><p>首先，我们需要前往网站<code>https://www.backblaze.com/zh_CN/cloud-storage.html</code></p>
+<p>注册一个账号，注册账号后我们进入桶界面，创建一个新的桶</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06image-20220628111626274.png" alt="创建桶"></p>
+<p>点击后，我们设置桶的名称和信息（注意，选择公众）其他均选择停用,如图所示</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06image-20220628111744198.png" alt="image-20220628111744198"></p>
+<p>创建后，我们可以看到桶信息，选择上载&#x2F;下载</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06image-20220628111856299.png" alt="image-20220628111856299"></p>
+<p>进入后，选择上载，随便上载一个图片<img src="https://pic.sikadi.top/internationBlog/2022/06image-20220628114858712.png" alt="image-20220628114858712"></p>
+<p>上载后，我们点击该文件，打开详细信息，找到友好URL</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06image-20220628115010181.png" alt="image-20220628115010181"></p>
+<p>这里注意，我们复制友好链接中主机那段信息<code>f004.backblazeb2.com</code>出来单独保存（注意，每个人这里都不一样）</p>
+<p>我们单独写在我们的记事本上</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 记事本</span><br><span class="line">f004.backblazeb2.com</span><br></pre></td></tr></table></figure>
+
+<h4 id="记录桶信息"><a href="#记录桶信息" class="headerlink" title="记录桶信息"></a>记录桶信息</h4><p>接着，我们找到桶信息页，记录下地域和桶名称</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06image-20220628115251935.png" alt="image-20220628115251935"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 记事本</span><br><span class="line">URL:f004.backblazeb2.com</span><br><span class="line">桶名称:TESTTEST123123SS</span><br><span class="line">Endpoint:s3.us-west-004.backblazeb2.com</span><br></pre></td></tr></table></figure>
+
+<h4 id="修改桶缓存信息"><a href="#修改桶缓存信息" class="headerlink" title="修改桶缓存信息"></a>修改桶缓存信息</h4><p>我们需要设置好桶的缓存，这样可以节约部分流量费</p>
+<p>首先，我们打开<code>桶设定</code></p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06image-20220628115558142.png" alt="image-20220628115558142"></p>
+<p>将桶设定中桶信息设定为下面这个json,修改后如图所示</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;cache-control&quot;:&quot;max-age=720000&quot;&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06image-20220628115646020.png" alt="image-20220628115646020"></p>
+<p>设定好后，我们点击更新桶，完成更新。至此，我们在B2设定就告一段落</p>
+<h3 id="cloudflare设置"><a href="#cloudflare设置" class="headerlink" title="cloudflare设置"></a>cloudflare设置</h3><p>首先，我们需要提前将域名NS设置到cloudflare中，这些工作都是准备工作，因此不在赘述，我们现在进入DNS管理页，进行设置</p>
+<h4 id="DNS解析设置"><a href="#DNS解析设置" class="headerlink" title="DNS解析设置"></a>DNS解析设置</h4><p>首先，我们来到DNS页，选择添加记录</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06image-20220628120057290.png" alt="image-20220628120057290"></p>
+<p>这里，我们按照自己的想法，设定好主机名，然后选择cname记录，目标选择为我们刚才在记事本内记录的URL</p>
+<p>[scode color&#x3D;”yellow”]注意，这里代理状态必须要是已代理[&#x2F;scode]</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 记事本</span><br><span class="line">URL:f004.backblazeb2.com  &lt;-就是这个</span><br><span class="line">桶名称:TESTTEST123123SS</span><br><span class="line">Endpoint:s3.us-west-004.backblazeb2.com</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06image-20220628120203972.png" alt="image-20220628120203972"></p>
+<p>设置完毕后，我们点击保存，保存后等待10分钟，按照下面这个格式访问，应该就可以访问成功了</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 访问方式</span><br><span class="line">https://&lt;主机名&gt;.&lt;域名&gt;/file/&lt;桶名称&gt;/&lt;桶内实际路径&gt;</span><br><span class="line"># 比如我的主机名是cc 域名是 test.com 桶名称为TESTTEST123123SS 实际路径为 /48738560_p0_thumbnail.png</span><br><span class="line">那么我就应该访问:https://cc.test.com/file/TESTTEST123123SS/48738560_p0_thumbnail.png</span><br></pre></td></tr></table></figure>
+
+<p>接着，我们就可以尝试访问了（当然这一步可能会失败，查看下一节解决）</p>
+<h4 id="HTTPS报错-x2F-无法访问"><a href="#HTTPS报错-x2F-无法访问" class="headerlink" title="HTTPS报错&#x2F;无法访问"></a>HTTPS报错&#x2F;无法访问</h4><p>这个问题是因为B2储存只支持<code>HTTPS</code>访问，如果没有则会报错，因此我们需要前往<code>SSL/TLS</code>进行设置(点击路径 <code>SSL/TLS</code>-&gt;<code>概述</code>)</p>
+<p>如图所示，我们需要将模式修改为<code>完全模式</code></p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06image-20220628121024546.png" alt="image-20220628121024546"></p>
+<p>设置完毕后，我们访问就可以看到我们的图片了（SSL）</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06image-20220628121125601.png" alt="image-20220628121125601"></p>
+<p>此时别急，拿出我们的小本本，记录一下我们访问的这个URL</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 记事本</span><br><span class="line">URL:f004.backblazeb2.com  &lt;-就是这个</span><br><span class="line">桶名称:TESTTEST123123SS</span><br><span class="line">Endpoint:s3.us-west-004.backblazeb2.com</span><br><span class="line">访问URL：https://cc.test.com/file/TESTTEST123123SS/48738560_p0_thumbnail.png</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="隐藏桶信息"><a href="#隐藏桶信息" class="headerlink" title="隐藏桶信息"></a>隐藏桶信息</h4><p>在讲解之前，我们需要解释下为什么需要隐藏桶信息</p>
+<p>因为我们免费图床是需要利用cloudflare和B2之间的带宽联盟来实现回源流量费免费的。</p>
+<blockquote>
+<p>带宽联盟:</p>
+<p>2018年的Cloudflare生日周，我们宣布正式推出<em>带宽联盟</em>：一群具有前瞻性的云计算和网络公司，致力于为我们的共同客户提供最佳和最具成本效益的体验</p>
+<p>说白话:就是cloudflare联合一些公司一起，将这些公司之间的流量传输（比如从cloudflare-&gt;B2）这一段流量费给减免或者免费（原来这是一笔高额的费用，走的公网带宽）</p>
+</blockquote>
+<p>我们通过cloudflare来浏览图片本身是免费的（cloudflare免费计划），cloudflare从B2获取图片这段路径也是免费的（带宽联盟），但是从我们从B2直接访问图片是付费的，如图所示。</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06image-20220628121844643.png" alt="image-20220628121844643"></p>
+<p>因此，我们应该尽可能的避免用户直接访问B2，因此，我们需要进行如下设置来隐藏我们的信息。</p>
+<hr>
+<p>首先，我们需要进入<code>规则</code>页面，选择<code>转发规则</code></p>
+<p>点击后我们要选中<code>创建转换规则</code>，然后选择<code>URL重写</code>，这样我们的链接就会在经过CDN节点的时候自动被转换为包含B2信息的URL，并被请求，这样我们的在外部请求的时候就不会泄露B2的相关信息了</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06image-20220628122226256.png" alt="image-20220628122226256"></p>
+<p>进入页面后，我们随便给规则命名，然后<code>当传入请求匹配时...</code>,我们设置为以下信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">字段:主机名</span><br><span class="line">运算符：等于</span><br></pre></td></tr></table></figure>
+
+<p>关于值的信息，我们掏出小本本，看一下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 记事本</span><br><span class="line">URL:f004.backblazeb2.com  &lt;-就是这个</span><br><span class="line">桶名称:TESTTEST123123SS</span><br><span class="line">Endpoint:s3.us-west-004.backblazeb2.com</span><br><span class="line">访问URL：https://cc.test.com/file/TESTTEST123123SS/48738560_p0_thumbnail.png</span><br></pre></td></tr></table></figure>
+
+<p>我们将我们访问URL中的主机名（在记事本中，我们的主机名是<code>cc.test.com</code>，其实就是我们的域名）填入到<code>值</code>的位置</p>
+<p>如下图所示</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06image-20220628122646947.png" alt="image-20220628122646947"></p>
+<p>设置完毕后，我们向下看</p>
+<p>在<code>然后...</code>这里，我们选择<code>重写到...</code>，并选择为<code>Dynamic</code>如图所示</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06image-20220628122749565.png" alt="image-20220628122749565"></p>
+<p>接着我们掏出小本本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 记事本</span><br><span class="line">URL:f004.backblazeb2.com  &lt;-就是这个</span><br><span class="line">桶名称:TESTTEST123123SS</span><br><span class="line">Endpoint:s3.us-west-004.backblazeb2.com</span><br><span class="line">访问URL：https://cc.test.com/file/TESTTEST123123SS/48738560_p0_thumbnail.png</span><br></pre></td></tr></table></figure>
+
+<p>访问URL中，我们后面跟随了一段路径，这里是<code>/file/TESTTEST123123SS</code>，我们需要让边缘节点帮我自动转发到这个节点，但是同时，我不希望丢失我的路径信息，如下面所示</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 原始链接:cc.test.com/48738560_p0_thumbnail.png</span><br><span class="line"># 实际物理链接：cc.test.com/file/TESTTEST123123SS/48738560_p0_thumbnail.png</span><br><span class="line"># 我需要服务端将cc.test.com/ 转换为-&gt;cc.test.com/file/TESTTEST123123SS</span><br><span class="line"># 同时我需要保留 48738560_p0_thumbnail.png</span><br><span class="line"># 因此我需要完成拼接 cc.test.com/file/TESTTEST123123SS/ + 48738560_p0_thumbnail.png</span><br><span class="line"># 我们就可以利用concat函数和http.request.uri.path这个变量来实现</span><br><span class="line"># concat是将两个变量/字符串拼接为一个</span><br><span class="line"># http.request.uri.path是提取我们原始链接cc.test.com/48738560_p0_thumbnail.png 中的PATH部分即为:48738560_p0_thumbnail.png </span><br><span class="line"># 因此，我们可以编写一个式子用来实现转换</span><br><span class="line"># concat(&quot;/file/TESTTEST123123SS&quot;, http.request.uri.path)</span><br><span class="line"># 这样，我们的PATH就被转换为了/file/TESTTEST123123SS/48738560_p0_thumbnail.png</span><br><span class="line"># 这个过程只有边缘节点有感知，用户无感知，从而实现隐藏桶信息和转换记录</span><br></pre></td></tr></table></figure>
+
+<p>根据上述过程，我们可以编写出这样一个式子:<code>concat(&quot;/file/TESTTEST123123SS&quot;, http.request.uri.path)</code></p>
+<p>将其填入我们的框中</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06image-20220628123530790.png" alt="image-20220628123530790"></p>
+<p>接着保存即可。此时，我们直接访问<code>https://&lt;主机名&gt;.&lt;域名&gt;/&lt;桶内路径&gt;</code>，就可以直接访问图片了，这样既减少了链接长度，还保护了B2的信息</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06image-20220628123831103.png" alt="image-20220628123831103"></p>
+<h4 id="设置缓存"><a href="#设置缓存" class="headerlink" title="设置缓存"></a>设置缓存</h4><p>虽然完成上述的步骤就基本可用了，但是咱们还是得给CDN上缓存，因为我们上传的图片基本不会删除，也不会变化，因此为了CDN的命中率，我们可以给这些东西设置缓存，来实现更快的访问</p>
+<p>首先，我们要来到<code>规则</code> &gt;<code>页面规则</code>，新建一个规则内容如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">URL:我们刚才设置CNAME的那个域（cc.test.com),在后面加上/* 组合为:cc.test.com/*</span><br><span class="line">选取设置 （必需）:缓存级别</span><br><span class="line">选择缓存级别 （必需）：缓存所有内容</span><br></pre></td></tr></table></figure>
+
+<p>设置图如下</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06image-20220628124246284.png" alt="image-20220628124246284"></p>
+<p>设置完毕后保存并部署</p>
+<p>然后，我们再设置个页面规则</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">URL:我们刚才设置CNAME的那个域（cc.test.com),在后面加上/file/&lt;桶名称&gt;/* 组合为:cc.test.com/TESTTEST123123SS/*</span><br><span class="line">选取设置 （必需）:缓存级别</span><br><span class="line">选择缓存级别 （必需）：缓存所有内容</span><br></pre></td></tr></table></figure>
+
+<p>设置完毕后同样部署即可</p>
+<p>这样，我们CDN的缓存命中率就明显提升了。</p>
+<h3 id="连接picGo"><a href="#连接picGo" class="headerlink" title="连接picGo"></a>连接picGo</h3><p>连接PicGO我们需要准备一个插件<code>picgo-plugin-s3</code>，Github地址:<a href="%22https://github.com/wayjam/picgo-plugin-s3%22">点我跳转</a></p>
+<p>我们这这里使用Picgo GUI演示</p>
+<h4 id="获取B2秘钥"><a href="#获取B2秘钥" class="headerlink" title="获取B2秘钥"></a>获取B2秘钥</h4><p>来到B2界面，选择<code>应用程序键</code>,选择新建一个应用秘钥</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06image-20220628125040109.png" alt="image-20220628125040109"></p>
+<p>按照图中的方式选择</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06image-20220628125113320.png" alt="image-20220628125113320"></p>
+<p>设置完成后，选择创建秘钥，会返回这样一段信息</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06image-20220628125150331.png" alt="image-20220628125150331"></p>
+<p>记录到小本本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 记事本(关键信息已经脱敏)</span><br><span class="line">URL:f004.backblazeb2.com  &lt;-就是这个</span><br><span class="line">桶名称:TESTTEST123123SS</span><br><span class="line">Endpoint:s3.us-west-004.backblazeb2.com</span><br><span class="line">访问URL：https://cc.test.com/file/TESTTEST123123SS/48738560_p0_thumbnail.png</span><br><span class="line">keyID:xxxxxxxxxx</span><br><span class="line">keyName:xxxxx</span><br><span class="line">applicationKey:xxxxxxxxxxxx</span><br></pre></td></tr></table></figure>
+
+<p>接着，我们打开我们的picgo，选择插件并安装</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06image-20220628125305367.png" alt="image-20220628125305367"></p>
+<p>安装完毕后，我们转到Amazon S3设置</p>
+<p>开始填写信息</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06image-20220628125342888.png" alt="image-20220628125342888"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">应用秘钥ID：keyID（小本本中的keyID，每个人不一样）</span><br><span class="line">应用秘钥:applicationKey(小本本中的applicationKey，每个人不一样)</span><br><span class="line">桶：桶名称（小本本上的桶名称）</span><br><span class="line">文件路径：按需设置，嫌麻烦可以直接/</span><br><span class="line">权限:public-read</span><br><span class="line">地区:不填</span><br><span class="line">自定义节点:小本本中的Endpoint</span><br><span class="line">自定义域名:刚才我们CNAME记录所记录的主机名+域名 (本文中是https://cc.test.com)</span><br><span class="line">下面两个开关:全关</span><br></pre></td></tr></table></figure>
+
+<p>接着，点击保存即可，保存后，我们可以尝试上传图片，成功即可。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="https://blog.70m.cc">kitemoon</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://blog.70m.cc/blog/2022/06/cl63qsjq9000186ycgaaw61yz/">https://blog.70m.cc/blog/2022/06/cl63qsjq9000186ycgaaw61yz/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%99%BD%E5%AB%96/">白嫖</a><a class="post-meta__tags" href="/tags/%E5%9B%BE%E5%BA%8A/">图床</a><a class="post-meta__tags" href="/tags/B2/">B2</a><a class="post-meta__tags" href="/tags/CloudFlare/">CloudFlare</a></div><div class="post_share"><div class="social-share" data-image="https://txcdn.2cy.plus/2022/07/01/62befc9bc8008/blog-cover-32.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/blog/2022/07/cl63qsjr0001r86yc1wuogagj/"><img class="prev-cover" src="https://pic.sikadi.top/internationBlog/2022/07/blog-cover-33.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">软路由+Docker+ASF实现本地24h挂卡</div></div></a></div><div class="next-post pull-right"><a href="/blog/2022/06/cl63qsjqx001e86ycaabfhtbv/"><img class="next-cover" src="https://pic.sikadi.top/internationBlog/2022/06ying-yi-72px.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">华为数通学习记录——Part2</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://pic.sikadi.top/internationBlog/2022/06/鸢月头像.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">kitemoon</div><div class="author-info__description">鸢月博客国际站，与主站每天同步一次，使用国际CDN进行加速</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">23</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">44</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/KiteMoon"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/KiteMoon" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xie@loli.fit" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">这里是鸢月博客国际站，采用全静态设计，使用CloudFlare加速，适合国际用户，如果需要回到CN站 <a target="view_window" href=https://blog.2cy.plus>请点我</a><br/>站点同步中，请稍后</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#B2-cloudflace-Picgo%E5%AE%9E%E7%8E%B0%E5%9B%BE%E5%BA%8A"><span class="toc-number">1.</span> <span class="toc-text">B2+cloudflace+Picgo实现图床</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E6%8E%92%E6%8F%90%E9%86%92"><span class="toc-number">1.1.</span> <span class="toc-text">前排提醒</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.2.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E7%AF%87"><span class="toc-number">1.3.</span> <span class="toc-text">正篇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#B2%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.3.1.</span> <span class="toc-text">B2设置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAB2%E6%A1%B6"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">创建B2桶</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%B0%E5%BD%95%E6%A1%B6%E4%BF%A1%E6%81%AF"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">记录桶信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%A1%B6%E7%BC%93%E5%AD%98%E4%BF%A1%E6%81%AF"><span class="toc-number">1.3.1.3.</span> <span class="toc-text">修改桶缓存信息</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cloudflare%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.3.2.</span> <span class="toc-text">cloudflare设置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#DNS%E8%A7%A3%E6%9E%90%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">DNS解析设置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTTPS%E6%8A%A5%E9%94%99-x2F-%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">HTTPS报错&#x2F;无法访问</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9A%90%E8%97%8F%E6%A1%B6%E4%BF%A1%E6%81%AF"><span class="toc-number">1.3.2.3.</span> <span class="toc-text">隐藏桶信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E7%BC%93%E5%AD%98"><span class="toc-number">1.3.2.4.</span> <span class="toc-text">设置缓存</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5picGo"><span class="toc-number">1.3.3.</span> <span class="toc-text">连接picGo</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96B2%E7%A7%98%E9%92%A5"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">获取B2秘钥</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/blog/2022/07/cl63qsjql000g86yccrw8e53c/" title="HCIE Cloud 学习笔记 Day4"><img src="https://api.13x.cc/random?token=Spc9Vte0HOiBWx7J2L" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HCIE Cloud 学习笔记 Day4"/></a><div class="content"><a class="title" href="/blog/2022/07/cl63qsjql000g86yccrw8e53c/" title="HCIE Cloud 学习笔记 Day4">HCIE Cloud 学习笔记 Day4</a><time datetime="2022-07-14T12:04:40.000Z" title="Created 2022-07-14 20:04:40">2022-07-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2022/07/cl63qsjqk000f86ycg5gjanhw/" title="HCIE Cloud 学习笔记 Day3"><img src="https://api.13x.cc/random?token=Spc9Vte0HOiBWx7J2L" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HCIE Cloud 学习笔记 Day3"/></a><div class="content"><a class="title" href="/blog/2022/07/cl63qsjqk000f86ycg5gjanhw/" title="HCIE Cloud 学习笔记 Day3">HCIE Cloud 学习笔记 Day3</a><time datetime="2022-07-13T04:04:40.000Z" title="Created 2022-07-13 12:04:40">2022-07-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2022/07/cl63qsjqh000a86yccicg7gwp/" title="HCIE Cloud 学习笔记 Day2"><img src="https://txcdn.2cy.plus/2022/07/13/62ce1d1291697/blog-cover-39.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HCIE Cloud 学习笔记 Day2"/></a><div class="content"><a class="title" href="/blog/2022/07/cl63qsjqh000a86yccicg7gwp/" title="HCIE Cloud 学习笔记 Day2">HCIE Cloud 学习笔记 Day2</a><time datetime="2022-07-12T04:04:40.000Z" title="Created 2022-07-12 12:04:40">2022-07-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2022/07/cl63qsjqi000b86yc7jy22kc4/" title="HCIE Cloud 学习笔记 Day1"><img src="https://pic.sikadi.top/internationBlog/2022/07/blog-cover-37.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HCIE Cloud 学习笔记 Day1"/></a><div class="content"><a class="title" href="/blog/2022/07/cl63qsjqi000b86yc7jy22kc4/" title="HCIE Cloud 学习笔记 Day1">HCIE Cloud 学习笔记 Day1</a><time datetime="2022-07-11T14:04:40.000Z" title="Created 2022-07-11 22:04:40">2022-07-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2022/07/cl63qsjqg000786ycdjcr9cnh/" title="GIN框架学习记录1——初始化第一个后端"><img src="https://pic.sikadi.top/internationBlog/2022/07/blog-cove-36r.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="GIN框架学习记录1——初始化第一个后端"/></a><div class="content"><a class="title" href="/blog/2022/07/cl63qsjqg000786ycdjcr9cnh/" title="GIN框架学习记录1——初始化第一个后端">GIN框架学习记录1——初始化第一个后端</a><time datetime="2022-07-07T14:04:40.000Z" title="Created 2022-07-07 22:04:40">2022-07-07</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By kitemoon</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'https://blog.70m.cc/blog/2022/06/cl63qsjq9000186ycgaaw61yz/'
+    this.page.identifier = '/blog/2022/06/cl63qsjq9000186ycgaaw61yz/'
+    this.page.title = 'B2+cloudflace+Picgo实现图床'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://kitemoon-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+
+  document.getElementById('darkmode').addEventListener('click', () => {
+    setTimeout(() => window.disqusReset(), 200)
+  })
+}
+
+if ('Disqus' === 'Disqus' || !false) {
+  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

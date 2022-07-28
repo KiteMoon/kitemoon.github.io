@@ -1,0 +1,309 @@
+<!DOCTYPE html><html lang="zh_cn" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>FusionAcces安装2 | 鸢月博客</title><meta name="keywords" content="运维,HCIP,华为,华为云桌面,FusionAccess"><meta name="author" content="kitemoon"><meta name="copyright" content="kitemoon"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="FusionAccess安装与部署相关内容">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FusionAcces安装2">
+<meta property="og:url" content="https://blog.70m.cc/blog/2022/01/cl63qsjqf000686yc40to6dng/index.html">
+<meta property="og:site_name" content="鸢月博客">
+<meta property="og:description" content="FusionAccess安装与部署相关内容">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic.sikadi.top/internationBlog/2022/06ying-yi-72px.jpg">
+<meta property="article:published_time" content="2022-01-22T02:31:40.000Z">
+<meta property="article:modified_time" content="2022-07-27T13:05:32.048Z">
+<meta property="article:author" content="kitemoon">
+<meta property="article:tag" content="运维">
+<meta property="article:tag" content="HCIP">
+<meta property="article:tag" content="华为">
+<meta property="article:tag" content="华为云桌面">
+<meta property="article:tag" content="FusionAccess">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic.sikadi.top/internationBlog/2022/06ying-yi-72px.jpg"><link rel="shortcut icon" href="https://pic.sikadi.top/internationBlog/2022/07/blog.png"><link rel="canonical" href="https://blog.70m.cc/blog/2022/01/cl63qsjqf000686yc40to6dng/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'FusionAcces安装2',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-07-27 21:05:32'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/rss2.xml" title="鸢月博客" type="application/rss+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://pic.sikadi.top/internationBlog/2022/06/鸢月头像.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">23</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">44</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">6</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://pan.loli.fit/"><i class="fa-fw fa fa-cloud"></i><span> 鸢月网盘</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://cpan.loli.fit/"><i class="fa-fw fa fa-cloud"></i><span> 鸢月资源</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://pic.loli.fit/"><i class="fa-fw fas fa-photo-video"></i><span> 鸢月图床</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://status.loli.fit/"><i class="fa-fw fa fa-signal"></i><span> 鸢月探针</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://sub.loli.fit/"><i class="fa-fw fa fa-paper-plane"></i><span> 订阅转化</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://u.loli.fit/"><i class="fa-fw fa fa-link"></i><span> 鸢月短链</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://blog.2cy.plus"><i class="fa-fw fas fa-link"></i><span> 中国大陆站</span></a></div><div class="menus_item"><a class="site-page" href="/link"><i class="fa-fw fa-solid fa-fan"></i><span> 友情链接</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://pic.sikadi.top/internationBlog/2022/06ying-yi-72px.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">鸢月博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://pan.loli.fit/"><i class="fa-fw fa fa-cloud"></i><span> 鸢月网盘</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://cpan.loli.fit/"><i class="fa-fw fa fa-cloud"></i><span> 鸢月资源</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://pic.loli.fit/"><i class="fa-fw fas fa-photo-video"></i><span> 鸢月图床</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://status.loli.fit/"><i class="fa-fw fa fa-signal"></i><span> 鸢月探针</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://sub.loli.fit/"><i class="fa-fw fa fa-paper-plane"></i><span> 订阅转化</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://u.loli.fit/"><i class="fa-fw fa fa-link"></i><span> 鸢月短链</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://blog.2cy.plus"><i class="fa-fw fas fa-link"></i><span> 中国大陆站</span></a></div><div class="menus_item"><a class="site-page" href="/link"><i class="fa-fw fa-solid fa-fan"></i><span> 友情链接</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">FusionAcces安装2</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-01-22T02:31:40.000Z" title="Created 2022-01-22 10:31:40">2022-01-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-07-27T13:05:32.048Z" title="Updated 2022-07-27 21:05:32">2022-07-27</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%BF%90%E7%BB%B4/">运维</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="FusionAcces安装2"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="FusionAcces安装2"><a href="#FusionAcces安装2" class="headerlink" title="FusionAcces安装2"></a>FusionAcces安装2</h1><blockquote>
+<p>上回说道，我们安装好了系统，但是我们还是要单独安装各个王建</p>
+</blockquote>
+<h2 id="进入系统"><a href="#进入系统" class="headerlink" title="进入系统"></a>进入系统</h2><p>当重启完系统后，我们会看到一个登录页面</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06/5fa59e11cf409.png" alt="image-20220122095354067"></p>
+<p>我们输入我们当时安装输入的密码(账号是root)，进入管理面板。</p>
+<blockquote>
+<p>这里大家默认会进入安装页面，但是出现了没有GUI的问题，可以输入 <code>startTools</code>进入GUI。</p>
+</blockquote>
+<p>GUI界面如下</p>
+<h2 id="GUI安装DriveTools"><a href="#GUI安装DriveTools" class="headerlink" title="GUI安装DriveTools"></a>GUI安装DriveTools</h2><p>这个就是GUI界面</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06/df1d2c2d633b4.png" alt="image-20220122095555404"></p>
+<p>首先，我们需要安装Tools，需要在FusionCompute设置挂载Tools</p>
+<p>。<img src="https://pic.sikadi.top/internationBlog/2022/06/4a972a2372ef1.png" alt="image-20220122095702248"></p>
+<p>挂载完毕后回车敲击 <code>Drive Tools</code></p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06/b9d93f6c28628.png" alt="image-20220122095739397"></p>
+<p>选中Install选项，按下回车，再按回车确定</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06/17aaeaeae2ce0.png" alt="image-20220122095808018"></p>
+<p>弹出这个说明就在安装了</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06/e223ceca0fa7f.png" alt="image-20220122095843925"></p>
+<p>跳出这个界面后，按下 <code>F8</code>重启</p>
+<h2 id="安装sofware"><a href="#安装sofware" class="headerlink" title="安装sofware"></a>安装sofware</h2><p>重启后我们再次进入GUI安装界面面</p>
+<p>选中software</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06/e33f1facdb382.png" alt="image-20220122100026749"></p>
+<p>然后选中Install all(Microsoft AD)进行安装（使用微软AD模式）</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06/7880998b3163b.png" alt="image-20220122100111247"></p>
+<p>要是配置不够会跳出这个选项，确认即可</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06/1561431f81ef2.png" alt="image-20220122100134012"></p>
+<p>无情回车</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06/63f7920faade2.png" alt="image-20220122100149994"></p>
+<p>这里需要输入你WI ITA等服务的IP地址，一般就是你安装WI那台虚拟机的IP（我在服务器上安装WI，WI要求我输入WI预想的IP地址）</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06/3b7478bd79ce2.png" alt="image-20220122100307402"></p>
+<p>按下回车后会提示，我们会将WI等服务的IP设置为这个，记下来，后面你进面板需要他</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06/b8e3d92861701.png" alt="image-20220122100408361"></p>
+<p>按下回车，开始无情安装</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06/c959c9a90cf4e.png" alt="image-20220122100626585"></p>
+<p>安装完成，现在去访问你刚才设置的WI的IP地址，应该就可以看到GUI了</p>
+<p>注意</p>
+<p>WI&#x2F;ITA不能和vGA&amp;lVG装在一起，不然会出现严重错误，所以全部安装不会安装vGA和lVG，需要你去单独在新的服务器安装一次。</p>
+<h2 id="配置ITA"><a href="#配置ITA" class="headerlink" title="配置ITA"></a>配置ITA</h2><blockquote>
+<p>虽然ITA和WI用的一个IP，但是端口号不同，80默认是给WI的，所以需要手动输入端口号并携带HTTPS头</p>
+</blockquote>
+<p>访问下面这个地址</p>
+<p><code>https://你刚才设置的IP:8448</code></p>
+<p>进入你的管理面板</p>
+<p>请注意:一定需要让你的AD和ITA能通信，不然会出大问题</p>
+<p>我们设置了VLAN，所以记得在Windows server里面设置VlanID</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06/e25103f1eae45.png" alt="image-20220122101038695"></p>
+<p>设置完毕后我们可以进入管理面板了</p>
+<p>我们可以看到这个界面</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06/07f986e28a236.png" alt="image-20220122101116776"></p>
+<p>参考密码表，可以获得默认账号密码信息</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06/52169f10a3f15.png" alt="image-20220122101238313"></p>
+<p>这里默认的账号:admin</p>
+<p>默认密码:Cloud12#$</p>
+<p>默认会强制要求修改一次密码，修改即可</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06/b9b91d6568b85.png" alt="image-20220122101340472"></p>
+<p>然后我们开始配置ITA了</p>
+<h3 id="配置虚拟化环境"><a href="#配置虚拟化环境" class="headerlink" title="配置虚拟化环境"></a>配置虚拟化环境</h3><p>说白了就是你对接的 <code>FusionCompute</code>后端设置。</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06/1371007e7eb89.png" alt="image-20220122101533713"></p>
+<p>还是需要保证你的FusionAccess可以和你的FusionCompute通信(毕竟使用FusionCompute来创建虚拟机啊)</p>
+<p>FusionCompute默认的端口:7070</p>
+<p>SSL端口号:7443</p>
+<p>北向接口默认账号是:vdisysman</p>
+<p>默认密码：VdiEnginE@234</p>
+<p>配置好后下一步</p>
+<h3 id="配置域和DNS"><a href="#配置域和DNS" class="headerlink" title="配置域和DNS"></a>配置域和DNS</h3><p>这里由于配置过于复杂，所以过段时间我单开个教程</p>
+<p>现在我搭建好了一个AD了，直接输入即可</p>
+<p>注意，AD必须要能通信</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06/4c025b7b5a4f2.png" alt="image-20220122101847887"></p>
+<p>域就是你设置的AD的域</p>
+<p>域账号一般习惯用administrator</p>
+<p>密码是你administrator的密码</p>
+<p>主域控制器IP是你的AD所在的服务器IP</p>
+<p>DNS服务器就是你配置好了的DNS IP地址</p>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p><img src="https://pic.sikadi.top/internationBlog/2022/06/6e13b464e209d.png" alt="image-20220122102046623"></p>
+<p>有的时候，可能会出现时间不同步，请手动同步时间</p>
+<p>因为我AD设置好了，不好改时间，所以我改下FusionAccess的时间。</p>
+<p>进入FusionAccess的shell，然后输入以下的命令</p>
+<p><code>date -s &quot;xxxx/xxx/xxx xx:xx:xx&quot;</code></p>
+<p>这个大家自行替换即可</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06/9e1810a4fde51.png" alt="image-20220122102310756"></p>
+<h3 id="配置vAG-x2F-vLB"><a href="#配置vAG-x2F-vLB" class="headerlink" title="配置vAG,&#x2F;vLB"></a>配置vAG,&#x2F;vLB</h3><blockquote>
+<p>这里我已经提前设置好vAG和vLB，具体我也会单独出一个教程</p>
+</blockquote>
+<p>我们直接输入vAG&#x2F;vLB的IP地址进去即可</p>
+<p>默认ssh账号:gandalf</p>
+<p>默认ssh密码:Cloud12#$</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06/a54e00ac4a3bf.png" alt="image-20220122102723406"></p>
+<p>配置完成后下一步即可(记得打开业务接入网管和自主维护网关)</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06/16c6656979bef.png" alt="image-20220122102706122"></p>
+<h3 id="配置默认策略"><a href="#配置默认策略" class="headerlink" title="配置默认策略"></a>配置默认策略</h3><p>打开就行，记得一定要开外设，不然你后面会出问题</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06/9fff8769f61ff.png" alt="image-20220122102740942"></p>
+<h3 id="提交信息"><a href="#提交信息" class="headerlink" title="提交信息"></a>提交信息</h3><p>确认无误，提交即可</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06/36d5e8bd7c132.png" alt="image-20220122102814119"></p>
+<h2 id="进入ITA"><a href="#进入ITA" class="headerlink" title="进入ITA"></a>进入ITA</h2><p>一切安装完毕后，我们就可以查看下主机的状态</p>
+<p><img src="https://pic.sikadi.top/internationBlog/2022/06/911084343cf85.png" alt="image-20220122103048623"></p>
+<p>确认全部绿色则代表安装完成，收工</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="https://blog.70m.cc">kitemoon</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://blog.70m.cc/blog/2022/01/cl63qsjqf000686yc40to6dng/">https://blog.70m.cc/blog/2022/01/cl63qsjqf000686yc40to6dng/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%BF%90%E7%BB%B4/">运维</a><a class="post-meta__tags" href="/tags/HCIP/">HCIP</a><a class="post-meta__tags" href="/tags/%E5%8D%8E%E4%B8%BA/">华为</a><a class="post-meta__tags" href="/tags/%E5%8D%8E%E4%B8%BA%E4%BA%91%E6%A1%8C%E9%9D%A2/">华为云桌面</a><a class="post-meta__tags" href="/tags/FusionAccess/">FusionAccess</a></div><div class="post_share"><div class="social-share" data-image="https://pic.sikadi.top/internationBlog/2022/06ying-yi-72px.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/blog/2022/01/cl63qsjqe000586yc8fqtfwee/"><img class="prev-cover" src="https://pic.sikadi.top/internationBlog/2022/06/b655f3c26dba0.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">FusionAcces发放桌面</div></div></a></div><div class="next-post pull-right"><a href="/blog/2022/01/cl63qsjqr001286yc5on5hxpf/"><img class="next-cover" src="https://pic.sikadi.top/internationBlog/2022/06/51965bcfcbc4c.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">FusionAccess(华为云桌面)安装</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/blog/2022/01/cl63qsjqe000586yc8fqtfwee/" title="FusionAcces发放桌面"><img class="cover" src="https://pic.sikadi.top/internationBlog/2022/06/b655f3c26dba0.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-22</div><div class="title">FusionAcces发放桌面</div></div></a></div><div><a href="/blog/2022/01/cl63qsjqr001286yc5on5hxpf/" title="FusionAccess(华为云桌面)安装"><img class="cover" src="https://pic.sikadi.top/internationBlog/2022/06/51965bcfcbc4c.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-21</div><div class="title">FusionAccess(华为云桌面)安装</div></div></a></div><div><a href="/blog/2022/05/cl63qsjqb000286ycd9pq05tt/" title="Centos Stream 9 换DNF源"><img class="cover" src="https://pic.sikadi.top/internationBlog/2022/06/page1.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-29</div><div class="title">Centos Stream 9 换DNF源</div></div></a></div><div><a href="/blog/2022/06/cl63qsjqw001b86yc8hlo1m16/" title="华为数通学习记录——Part1"><img class="cover" src="https://pic.sikadi.top/internationBlog/2022/06/17b09401c4bc1.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-24</div><div class="title">华为数通学习记录——Part1</div></div></a></div><div><a href="/blog/2022/06/cl63qsjqx001e86ycaabfhtbv/" title="华为数通学习记录——Part2"><img class="cover" src="https://pic.sikadi.top/internationBlog/2022/06ying-yi-72px.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-25</div><div class="title">华为数通学习记录——Part2</div></div></a></div><div><a href="/blog/2022/07/cl63qsjqy001h86ycdqvlcq4t/" title="华为数通学习记录——Part3"><img class="cover" src="https://pic.sikadi.top/internationBlog/2022/07/blog-cover-34.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-05</div><div class="title">华为数通学习记录——Part3</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://pic.sikadi.top/internationBlog/2022/06/鸢月头像.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">kitemoon</div><div class="author-info__description">鸢月博客国际站，与主站每天同步一次，使用国际CDN进行加速</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">23</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">44</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/KiteMoon"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/KiteMoon" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xie@loli.fit" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">这里是鸢月博客国际站，采用全静态设计，使用CloudFlare加速，适合国际用户，如果需要回到CN站 <a target="view_window" href=https://blog.2cy.plus>请点我</a><br/>站点同步中，请稍后</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#FusionAcces%E5%AE%89%E8%A3%852"><span class="toc-number">1.</span> <span class="toc-text">FusionAcces安装2</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E5%85%A5%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.1.</span> <span class="toc-text">进入系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GUI%E5%AE%89%E8%A3%85DriveTools"><span class="toc-number">1.2.</span> <span class="toc-text">GUI安装DriveTools</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85sofware"><span class="toc-number">1.3.</span> <span class="toc-text">安装sofware</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEITA"><span class="toc-number">1.4.</span> <span class="toc-text">配置ITA</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E8%99%9A%E6%8B%9F%E5%8C%96%E7%8E%AF%E5%A2%83"><span class="toc-number">1.4.1.</span> <span class="toc-text">配置虚拟化环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%92%8CDNS"><span class="toc-number">1.4.2.</span> <span class="toc-text">配置域和DNS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F"><span class="toc-number">1.4.3.</span> <span class="toc-text">注意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEvAG-x2F-vLB"><span class="toc-number">1.4.4.</span> <span class="toc-text">配置vAG,&#x2F;vLB</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E9%BB%98%E8%AE%A4%E7%AD%96%E7%95%A5"><span class="toc-number">1.4.5.</span> <span class="toc-text">配置默认策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E4%BA%A4%E4%BF%A1%E6%81%AF"><span class="toc-number">1.4.6.</span> <span class="toc-text">提交信息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E5%85%A5ITA"><span class="toc-number">1.5.</span> <span class="toc-text">进入ITA</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/blog/2022/07/cl63qsjql000g86yccrw8e53c/" title="HCIE Cloud 学习笔记 Day4"><img src="https://api.13x.cc/random?token=Spc9Vte0HOiBWx7J2L" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HCIE Cloud 学习笔记 Day4"/></a><div class="content"><a class="title" href="/blog/2022/07/cl63qsjql000g86yccrw8e53c/" title="HCIE Cloud 学习笔记 Day4">HCIE Cloud 学习笔记 Day4</a><time datetime="2022-07-14T12:04:40.000Z" title="Created 2022-07-14 20:04:40">2022-07-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2022/07/cl63qsjqk000f86ycg5gjanhw/" title="HCIE Cloud 学习笔记 Day3"><img src="https://api.13x.cc/random?token=Spc9Vte0HOiBWx7J2L" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HCIE Cloud 学习笔记 Day3"/></a><div class="content"><a class="title" href="/blog/2022/07/cl63qsjqk000f86ycg5gjanhw/" title="HCIE Cloud 学习笔记 Day3">HCIE Cloud 学习笔记 Day3</a><time datetime="2022-07-13T04:04:40.000Z" title="Created 2022-07-13 12:04:40">2022-07-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2022/07/cl63qsjqh000a86yccicg7gwp/" title="HCIE Cloud 学习笔记 Day2"><img src="https://txcdn.2cy.plus/2022/07/13/62ce1d1291697/blog-cover-39.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HCIE Cloud 学习笔记 Day2"/></a><div class="content"><a class="title" href="/blog/2022/07/cl63qsjqh000a86yccicg7gwp/" title="HCIE Cloud 学习笔记 Day2">HCIE Cloud 学习笔记 Day2</a><time datetime="2022-07-12T04:04:40.000Z" title="Created 2022-07-12 12:04:40">2022-07-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2022/07/cl63qsjqi000b86yc7jy22kc4/" title="HCIE Cloud 学习笔记 Day1"><img src="https://pic.sikadi.top/internationBlog/2022/07/blog-cover-37.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HCIE Cloud 学习笔记 Day1"/></a><div class="content"><a class="title" href="/blog/2022/07/cl63qsjqi000b86yc7jy22kc4/" title="HCIE Cloud 学习笔记 Day1">HCIE Cloud 学习笔记 Day1</a><time datetime="2022-07-11T14:04:40.000Z" title="Created 2022-07-11 22:04:40">2022-07-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2022/07/cl63qsjqg000786ycdjcr9cnh/" title="GIN框架学习记录1——初始化第一个后端"><img src="https://pic.sikadi.top/internationBlog/2022/07/blog-cove-36r.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="GIN框架学习记录1——初始化第一个后端"/></a><div class="content"><a class="title" href="/blog/2022/07/cl63qsjqg000786ycdjcr9cnh/" title="GIN框架学习记录1——初始化第一个后端">GIN框架学习记录1——初始化第一个后端</a><time datetime="2022-07-07T14:04:40.000Z" title="Created 2022-07-07 22:04:40">2022-07-07</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By kitemoon</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'https://blog.70m.cc/blog/2022/01/cl63qsjqf000686yc40to6dng/'
+    this.page.identifier = '/blog/2022/01/cl63qsjqf000686yc40to6dng/'
+    this.page.title = 'FusionAcces安装2'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://kitemoon-blog.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+
+  document.getElementById('darkmode').addEventListener('click', () => {
+    setTimeout(() => window.disqusReset(), 200)
+  })
+}
+
+if ('Disqus' === 'Disqus' || !false) {
+  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
